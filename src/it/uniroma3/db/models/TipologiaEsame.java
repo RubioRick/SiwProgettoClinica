@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -21,6 +23,11 @@ public class TipologiaEsame {
 	
 	@OneToMany(mappedBy = "tipologiaEsame")
 	private List<Esame> esamiAssociati;
+	
+	
+	@JoinColumn (name ="requisito")
+	@ManyToMany(mappedBy = "requisiti")
+	private List<Requisito> requisiti;
 	
 	public TipologiaEsame(){
 		this.esamiAssociati = new ArrayList<Esame>();

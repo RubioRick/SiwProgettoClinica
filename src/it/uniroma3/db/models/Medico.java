@@ -22,6 +22,9 @@ public class Medico {
 	private Long id;
 	
 	@Column(nullable = false)
+	private String password;
+
+	@Column(nullable = false)
 	private String nome;
 	
 	@Column(nullable = false)
@@ -75,6 +78,14 @@ public class Medico {
 
 	public void setEsamiEffettuati(List<Esame> esamiEffettuati) {
 		this.esamiEffettuati = esamiEffettuati;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String toString() {

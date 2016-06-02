@@ -19,8 +19,7 @@ import javax.persistence.TemporalType;
 public class Paziente {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="tab")
-	private Long id;
+	private String codiceFiscale;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -28,9 +27,12 @@ public class Paziente {
 	@Column(nullable = false)
 	private String cognome;
 	
+	@Column(unique = true)
+	private String email;
+	
 	@Temporal(TemporalType.DATE)
 	private Date dataDiNascita;
-	private String email;
+	
 	
 	@OneToMany(mappedBy = "paziente")
 	private List<Esame> esami;
@@ -39,11 +41,11 @@ public class Paziente {
 		this.esami = new ArrayList<Esame>();
 	}
 	
-	public Long getId() {
-		return id;
+	public String getId() {
+		return codiceFiscale;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(String codiceFiscale) {
+		this.codiceFiscale = codiceFiscale;
 	}
 	public String getNome() {
 		return nome;
@@ -73,7 +75,7 @@ public class Paziente {
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Paziente"); 
-		sb.append("{id=").append(id); 
+		sb.append("{id=").append(codiceFiscale); 
 		sb.append(", nome='").append(nome);
 		sb.append(", cognome='").append(cognome);
 		sb.append(", dataDiNascita=").append(dataDiNascita); 

@@ -1,12 +1,14 @@
 package it.uniroma3.db.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,6 +28,9 @@ public class Esame {
 	
 	@ManyToOne
 	private Paziente paziente;
+	
+	@OneToMany(mappedBy="idEsame")
+	private List<RisultatiEsame> risultati;
 	
 	@Temporal(TemporalType.TIMESTAMP)
     private Date data;
