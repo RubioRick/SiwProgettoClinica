@@ -6,21 +6,16 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@TableGenerator(name="tab", initialValue=1000, allocationSize=9999)
 public class Paziente {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE, generator="tab")
-	private Long id;
+	private String codiceFiscale;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -30,6 +25,8 @@ public class Paziente {
 	
 	@Temporal(TemporalType.DATE)
 	private Date dataDiNascita;
+	
+	@Column(unique=true)
 	private String email;
 	
 	@OneToMany(mappedBy = "paziente")
@@ -39,11 +36,11 @@ public class Paziente {
 		this.esami = new ArrayList<Esame>();
 	}
 	
-	public Long getId() {
-		return id;
+	public String getCodiceFiscale() {
+		return codiceFiscale;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodiceFiscale(String codiceFiscale) {
+		this.codiceFiscale = codiceFiscale;
 	}
 	public String getNome() {
 		return nome;
@@ -73,7 +70,7 @@ public class Paziente {
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Paziente"); 
-		sb.append("{id=").append(id); 
+		sb.append("{codiceFiscale=").append(codiceFiscale); 
 		sb.append(", nome='").append(nome);
 		sb.append(", cognome='").append(cognome);
 		sb.append(", dataDiNascita=").append(dataDiNascita); 

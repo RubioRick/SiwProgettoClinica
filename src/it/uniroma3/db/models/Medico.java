@@ -22,6 +22,9 @@ public class Medico {
 	private Long id;
 	
 	@Column(nullable = false)
+	private String password;
+	
+	@Column(nullable = false)
 	private String nome;
 	
 	@Column(nullable = false)
@@ -51,6 +54,14 @@ public class Medico {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = PortaleClinica.toSHA1(password);
 	}
 
 	public String getCognome() {
