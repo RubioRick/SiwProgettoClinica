@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 public class Medico {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="tab1")
-	private Long id;
+	private long id;
 	
 	@Column(nullable = false)
 	private String password;
