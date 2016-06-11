@@ -16,26 +16,16 @@ public class PazienteDaoJpa implements PazienteDao {
 	@Override
 	public void save(Paziente p) {
 		this.em.persist(p);
-
 	}
 
 	@Override
 	public void remove(Paziente p) {
 		this.em.remove(p);
-
 	}
 
 	@Override
 	public void update(Paziente p) {
-		Query query = this.em.createQuery("UPDATE Paziente SET nome = ?1, cognome = ?2, dataNascita = ?3, email = ?4,  WHERE codicefiscale = ?5");
-		query.setParameter(1,p.getNome());
-		query.setParameter(2,p.getCognome());
-		query.setParameter(3,p.getDataDiNascita());
-		query.setParameter(4,p.getEmail());
-		query.setParameter(5,p.getCodiceFiscale());
-		
-	
-
+		this.em.merge(p);
 	}
 
 	@Override

@@ -23,7 +23,7 @@
 		</header>
 		<div class="feature">
 			<div class="feature-inner">
-				<h1>Accedi al Portale :</h1>
+				<h1>Accedi al Portale:</h1>
 			</div>
 		</div>
 		<div id="content">

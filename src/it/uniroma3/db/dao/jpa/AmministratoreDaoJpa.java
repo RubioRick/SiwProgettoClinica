@@ -16,27 +16,17 @@ public class AmministratoreDaoJpa implements AmministratoreDao {
 
 	@Override
 	public void save(Amministratore a) {
-	this.em.persist(a);
-		
+		this.em.persist(a);
 	}
-	
-	
-	
 
 	@Override
 	public void remove(Amministratore a) {
 		this.em.remove(a);
-		
 	}
 
 	@Override
 	public void update(Amministratore a) {
-		Query query = this.em.createQuery("UPDATE Amministratore SET nome = ?1, password = ?2 WHERE id = ?3");
-		query.setParameter(1,a.getNome());
-		query.setParameter(2,a.getPassword());
-		query.setParameter(3,a.getId());
-	
-		
+		this.em.merge(a);
 	}
 
 	@Override

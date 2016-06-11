@@ -18,24 +18,17 @@ public class RequisitoDaoJpa implements RequisitoDao {
 
 	@Override
 	public void save(Requisito r) {
-	this.em.persist(r);
-		
+		this.em.persist(r);
 	}
 
 	@Override
 	public void remove(Requisito r) {
 		this.em.remove(r);
-		
 	}
 
 	@Override
 	public void update(Requisito r) {
-		Query query = this.em.createQuery("UPDATE Requisito SET descrizione = ?1, WHERE nome = ?2");
-		query.setParameter(1,r.getDescrizione());
-		query.setParameter(2,r.getNome());
-		
-	
-		
+		this.em.merge(r);
 	}
 
 	@Override

@@ -16,24 +16,17 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
 
 	@Override
 	public void save(RisultatoEsame r) {
-	this.em.persist(r);
-		
+		this.em.persist(r);
 	}
 
 	@Override
 	public void remove(RisultatoEsame r) {
 		this.em.remove(r);
-		
 	}
 
 	@Override
 	public void update(RisultatoEsame r) {
-		Query query = this.em.createQuery("UPDATE RisultatiEsame SET descrizione = ?1, risultato = ?2 WHERE id = ?3");
-		query.setParameter(1,r.getDescrizione());
-		query.setParameter(2,r.getRisultato());
-		query.setParameter(3,r.getIdEsame());
-	
-		
+		this.em.merge(r);
 	}
 
 	@Override

@@ -3,7 +3,6 @@ package it.uniroma3.db.dao.jpa;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import it.uniroma3.db.dao.TipologiaEsameDao;
 import it.uniroma3.db.models.TipologiaEsame;
@@ -16,20 +15,16 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 	@Override
 	public void save(TipologiaEsame t) {
 		this.em.persist(t);
-
 	}
 
 	@Override
 	public void remove(TipologiaEsame t) {
 		this.em.remove(t);
-
 	}
 
 	@Override
 	public void update(TipologiaEsame t) {
-		Query query = this.em.createQuery("UPDATE TipologiaEsame SET nome = ?1,  WHERE id = ?2");
-                query.setParameter(1,t.getNome());
-		query.setParameter(2,t.getId());
+		this.em.merge(t);
 	}
 
 	@Override
