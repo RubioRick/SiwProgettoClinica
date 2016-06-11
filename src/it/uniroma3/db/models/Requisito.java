@@ -19,4 +19,28 @@ public class Requisito {
 	
 	@Column(nullable = false)
 	private String descrizione;
+
+	public List<TipologiaEsame> getTipologiaEsami() {
+		return tipologiaEsami;
+	}
+
+	public void setTipologiaEsami(List<TipologiaEsame> tipologiaEsami) {
+		this.tipologiaEsami = tipologiaEsami;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
 }
