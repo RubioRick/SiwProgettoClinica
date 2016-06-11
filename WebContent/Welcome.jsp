@@ -19,13 +19,13 @@
 				<div id="top-nav">
 					<ul>
 						<li>
-						<%
-						if(session.getAttribute("user") == null){
-							out.print("<a href='Login.jsp'>Login</a>");
-						}else{ 
-							out.print(session.getAttribute("user"));
-						}
-						%>
+							<%
+								if (session.getAttribute("user") == null) {
+									out.print("<a href='Login.jsp'>Login</a>");
+								} else {
+									out.print(session.getAttribute("user"));
+								}
+							%>
 						</li>
 					</ul>
 				</div>
@@ -47,10 +47,25 @@
 					<p>
 						<b>Benvenuto nel portale della clinica GSC.</b>
 					</p>
-					<p>La clinica offre i seguenti esami:</p>
-					<p>
-					
-					</p>
+					<p>La clinica offre le seguenti tipologie di esame:</p>
+					<f:view>
+						<h1>Tipologie esame:</h1>
+						<h:form>
+							<c:forEach var="tipologiaEsame" items="#{TipologiaEsameController.tipologieEsame}">
+									
+									    
+									<a href="mostraTipologiaEsame.jsp?id=<h:commandLink>
+												action='#{TipologiaEsameController.findTipologie}'
+												value= '#{tipologiaEsame.id}'>
+												</h:commandLink>" > ${tipologiaEsame.nome} </a>
+										
+									
+								</c:forEach>
+							
+						</h:form>
+
+					</f:view>
+					<p></p>
 				</div>
 				</main>
 				<nav id="sidebar">

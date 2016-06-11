@@ -1,11 +1,15 @@
 package it.uniroma3.db.dao.jpa;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.db.dao.TipologiaEsameDao;
 import it.uniroma3.db.models.TipologiaEsame;
+
 
 @Stateless(name = "tipFacade")
 public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
@@ -31,6 +35,15 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 	public TipologiaEsame findByPrimaryKey(long id) {
 		TipologiaEsame t = this.em.find(TipologiaEsame.class, id);
 		return t;
+	}
+
+	
+	@Override
+	public List<TipologiaEsame> findAll() {
+		 CriteriaQuery<TipologiaEsame> cq = em.getCriteriaBuilder().createQuery(TipologiaEsame.class);
+	        cq.select(cq.from(TipologiaEsame.class));
+	        List<TipologiaEsame> tipologieEsame = em.createQuery(cq).getResultList();
+			return tipologieEsame;
 	}
 
 }
