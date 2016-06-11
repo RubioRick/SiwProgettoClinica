@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Fixed Width 1 Red</title>
+<title>Benvenuto in Clinica GSG</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -13,14 +13,20 @@
 			<div id="header-inner">
 				<div id="logo">
 					<h1>
-						<a href="#">Clinica<span> GSG</span></a>
+						<a>Clinica<span> GSG</span></a>
 					</h1>
 				</div>
 				<div id="top-nav">
 					<ul>
-
-						<li><a href="#">Login</a></li>
-
+						<li>
+						<%
+						if(session.getAttribute("user") == null){
+							out.print("<a href='Login.jsp'>Login</a>");
+						}else{ 
+							out.print(session.getAttribute("user"));
+						}
+						%>
+						</li>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -31,11 +37,8 @@
 				<h1>Benvenuto</h1>
 			</div>
 		</div>
-
-
 		<div id="content">
 			<div id="content-inner">
-
 				<main id="contentbar">
 				<div class="article">
 					<h2>
@@ -45,28 +48,23 @@
 						<b>Benvenuto nel portale della clinica GSC.</b>
 					</p>
 					<p>La clinica offre i seguenti esami :</p>
-
-					<p></p>
-
-
+					<p>
+					
+					</p>
 				</div>
 				</main>
-
 				<nav id="sidebar">
 					<div class="widget">
 						<h3>Informazioni</h3>
 						<ul>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">Contatti</a></li>
-
 						</ul>
 					</div>
 				</nav>
-
 				<div class="clr"></div>
 			</div>
 		</div>
-
 		<div id="footerblurb">
 			<div id="footerblurb-inner">
 
@@ -77,8 +75,6 @@
 					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
 						Federico Giulianelli , Simone Sanò.</p>
 				</div>
-
-
 				<div class="clr"></div>
 			</div>
 		</div>
