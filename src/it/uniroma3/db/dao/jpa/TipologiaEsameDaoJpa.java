@@ -28,8 +28,8 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 	@Override
 	public void update(TipologiaEsame t) {
 		Query query = this.em.createQuery("UPDATE TipologiaEsame SET nome = ?1,  WHERE id = ?2");
-                query.setParameter(1,m.getNome());
-		query.setParameter(2,m.getId());
+                query.setParameter(1,t.getNome());
+		query.setParameter(2,t.getId());
 	}
 
 	@Override
