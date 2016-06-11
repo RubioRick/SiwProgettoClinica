@@ -47,7 +47,7 @@
 					<p>
 						<b>Benvenuto nel portale della clinica GSC.</b>
 					</p>
-					<p>La clinica offre i seguenti esami :</p>
+					<p>La clinica offre i seguenti esami:</p>
 					<p>
 					
 					</p>
@@ -72,8 +72,8 @@
 					<h2>
 						<span>Crediti</span>
 					</h2>
-					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
-						Federico Giulianelli , Simone Sanò.</p>
+					<p>Questo sito è stato sviluppato da Riccardo Grasselli,
+						Federico Giulianelli, Simone Sanò.</p>
 				</div>
 				<div class="clr"></div>
 			</div>
