@@ -29,11 +29,11 @@ public class Esame {
 	@ManyToOne
 	private Paziente paziente;
 	
-	@OneToMany(mappedBy="idEsame")
-	private List<RisultatiEsame> risultati;
-	
 	@Temporal(TemporalType.TIMESTAMP)
     private Date data;
+	
+	@OneToMany(mappedBy = "idEsame")
+	private List<RisultatoEsame> risultati;
 
 	public Long getId() {
 		return id;
@@ -87,7 +87,4 @@ public class Esame {
 		return sb.toString();
 	}
 	
-    
-	
-
 }
