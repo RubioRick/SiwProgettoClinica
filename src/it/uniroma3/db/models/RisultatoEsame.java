@@ -2,6 +2,8 @@ package it.uniroma3.db.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -11,20 +13,23 @@ import javax.persistence.Table;
 public class RisultatoEsame {
 	
 	@Id
-	@ManyToOne
-	private long idEsame;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	
-	@Id
+	@ManyToOne
+	private Long idEsame;
+	
+	
 	private String descrizione;
 	
 	@Column
 	private String risultato;
 
-	public long getIdEsame() {
+	public Long getIdEsame() {
 		return idEsame;
 	}
 
-	public void setIdEsame(long idEsame) {
+	public void setIdEsame(Long idEsame) {
 		this.idEsame = idEsame;
 	}
 
@@ -42,6 +47,14 @@ public class RisultatoEsame {
 
 	public void setRisultato(String risultato) {
 		this.risultato = risultato;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }

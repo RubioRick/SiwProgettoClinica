@@ -1,5 +1,7 @@
 package it.uniroma3.db.dao.jpa;
 
+import java.util.Date;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,8 +16,11 @@ public class PazienteDaoJpa implements PazienteDao {
     private EntityManager em;
 
 	@Override
-	public void save(Paziente p) {
+	public Paziente save(String nome, String Cognome, String cf, String email, Date dataNascita) {
+		Paziente p = new Paziente();
+		p.setCodiceFiscale(cf);p.setCognome(Cognome);p.setDataDiNascita(dataNascita);p.setEmail(email);p.setNome(nome);
 		this.em.persist(p);
+		return p;
 	}
 
 	@Override

@@ -15,8 +15,11 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
     private EntityManager em;
 
 	@Override
-	public void save(RisultatoEsame r) {
+	public RisultatoEsame save(Long id,String descrizione, String risultato) {
+		RisultatoEsame r = new RisultatoEsame();
+		r.setIdEsame(id);r.setDescrizione(descrizione);r.setRisultato(risultato);
 		this.em.persist(r);
+		return r;
 	}
 
 	@Override
@@ -30,7 +33,7 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
 	}
 
 	@Override
-	public RisultatoEsame findByPrimaryKey(String id) {
+	public RisultatoEsame findByPrimaryKey(Long id) {
 		RisultatoEsame r = this.em.find(RisultatoEsame.class, id);
 		return r;
 	}
