@@ -17,8 +17,10 @@ public class RequisitoDaoJpa implements RequisitoDao {
     private EntityManager em;
 
 	@Override
-	public void save(Requisito r) {
+	public Requisito save(String nome , String descrizione) {
+		Requisito r = new Requisito();
 		this.em.persist(r);
+		return r;
 	}
 
 	@Override

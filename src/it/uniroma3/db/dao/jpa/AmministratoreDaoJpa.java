@@ -15,8 +15,10 @@ public class AmministratoreDaoJpa implements AmministratoreDao {
     private EntityManager em;
 
 	@Override
-	public void save(Amministratore a) {
+	public Amministratore save(String id , String nome , String password) {
+		Amministratore a = new Amministratore();
 		this.em.persist(a);
+		return a;
 	}
 
 	@Override
