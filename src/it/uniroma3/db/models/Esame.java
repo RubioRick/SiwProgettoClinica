@@ -75,6 +75,7 @@ public class Esame {
 		this.data = data;
 	}
 	
+	@Override
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Esame"); 

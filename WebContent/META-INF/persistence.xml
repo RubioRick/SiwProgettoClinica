@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
 			http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="unit-jee-es1"
+	<persistence-unit name="clinica"
 		transaction-type="JTA">
 		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 		<jta-data-source>PostgreSQL Database</jta-data-source>
@@ -12,6 +12,9 @@
 		<class>it.uniroma3.db.model.Medico</class>
 		<class>it.uniroma3.db.model.Paziente</class>
 		<class>it.uniroma3.db.model.TipologiaEsame</class>
+		<class>it.uniroma3.db.model.RisultatoEsame</class>
+		<class>it.uniroma3.db.model.Requisito</class>
+		<class>it.uniroma3.db.model.Amministratore</class>
 		<properties>
 			<property name="openjpa.jdbc.SynchronizeMappings"
 			    value="buildSchema(ForeignKeys=true)" />

@@ -4,8 +4,6 @@ import javax.ejb.Stateless;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import it.uniroma3.db.dao.RequisitoDao;
 import it.uniroma3.db.models.Requisito;
 

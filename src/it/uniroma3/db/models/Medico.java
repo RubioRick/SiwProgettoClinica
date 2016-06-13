@@ -97,6 +97,7 @@ public class Medico {
 		this.esamiEffettuati = esamiEffettuati;
 	}
 	
+	@Override
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Paziente"); 
