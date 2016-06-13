@@ -1,5 +1,7 @@
 package it.uniroma3.controller;
 
+import java.util.List;
+
 import it.uniroma3.db.dao.jpa.RisultatiEsameDaoJpa;
 import it.uniroma3.db.models.RisultatoEsame;
 
@@ -10,12 +12,13 @@ import javax.faces.bean.ManagedProperty;
 @ManagedBean
 public class RisultatiEsameController {
 
-	@ManagedProperty(value="#{param.id}")
+	@ManagedProperty(value= "#{param.id}")
 	private Long id;
 	private Long idEsame;
 	private String descrizione;
 	private String risultato;
 	private RisultatoEsame risEsame;
+	private List<RisultatoEsame> risultati;
 	
 	@EJB
 	private RisultatiEsameDaoJpa risultatoEsameFacade;
@@ -33,6 +36,11 @@ public class RisultatiEsameController {
 	public String trovaRisultato(Long id){
 		this.risEsame = risultatoEsameFacade.findByPrimaryKey(id);
 		return "risultato";
+	}
+	
+	public String trovaRisultati(){
+		this.risultati = risultatoEsameFacade.risultatiDi(idEsame);
+		return "risultati";
 	}
 	
 	
@@ -78,6 +86,14 @@ public class RisultatiEsameController {
 
 	public void setRisultatoEsameFacade(RisultatiEsameDaoJpa risultatoEsameFacade) {
 		this.risultatoEsameFacade = risultatoEsameFacade;
+	}
+
+	public List<RisultatoEsame> getRisultati() {
+		return risultati;
+	}
+
+	public void setRisultati(List<RisultatoEsame> risultati) {
+		this.risultati = risultati;
 	}
 	
 }
