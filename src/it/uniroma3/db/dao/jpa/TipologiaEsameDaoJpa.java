@@ -14,7 +14,7 @@ import it.uniroma3.db.models.TipologiaEsame;
 @Stateless(name = "tipFacade")
 public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 	@PersistenceContext(unitName = "clinica")
-    private EntityManager em;
+	private EntityManager em;
 
 	@Override
 	public TipologiaEsame save(long id, String nome) {
@@ -39,13 +39,13 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 		return t;
 	}
 
-	
+
 	@Override
 	public List<TipologiaEsame> findAll() {
-		 CriteriaQuery<TipologiaEsame> cq = em.getCriteriaBuilder().createQuery(TipologiaEsame.class);
-	        cq.select(cq.from(TipologiaEsame.class));
-	        List<TipologiaEsame> tipologieEsame = em.createQuery(cq).getResultList();
-			return tipologieEsame;
+		CriteriaQuery<TipologiaEsame> cq = em.getCriteriaBuilder().createQuery(TipologiaEsame.class);
+		cq.select(cq.from(TipologiaEsame.class));
+		List<TipologiaEsame> tipologieEsame = em.createQuery(cq).getResultList();
+		return tipologieEsame;
 	}
 
 }

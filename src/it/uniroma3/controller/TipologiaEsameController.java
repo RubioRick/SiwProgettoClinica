@@ -36,6 +36,11 @@ public class TipologiaEsameController {
 		return "tipologiaEsame";
 	}
 
+	public String trovaTutteLeTipologieEsame(){
+		this.tipologieEsame = tipologiaEsameFacade.findAll();
+		return "tipologieEsame";
+	}
+	
 	public Long getId() {
 		return id;
 	}
