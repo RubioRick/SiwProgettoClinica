@@ -1,6 +1,7 @@
 package it.uniroma3.db.dao.jpa;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -35,6 +36,12 @@ public class PazienteDaoJpa implements PazienteDao {
 	public Paziente findByPrimaryKey(String cf) {
 		Paziente p = this.em.find(Paziente.class, cf);
 		return p;
+	}
+
+	@Override
+	public List<Paziente> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
