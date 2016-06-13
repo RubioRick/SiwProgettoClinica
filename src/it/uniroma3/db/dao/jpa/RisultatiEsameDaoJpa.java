@@ -1,5 +1,7 @@
 package it.uniroma3.db.dao.jpa;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,6 +9,7 @@ import javax.persistence.Query;
 
 import it.uniroma3.db.dao.RisultatiEsameDao;
 import it.uniroma3.db.models.RisultatoEsame;
+import it.uniroma3.db.products.Product;
 
 @Stateless(name = "risFacade")
 public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
@@ -36,6 +39,14 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
 	public RisultatoEsame findByPrimaryKey(Long id) {
 		RisultatoEsame r = this.em.find(RisultatoEsame.class, id);
 		return r;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<RisultatoEsame> risultatiDi(Long idEsame) {
+		Query query = em.createQuery("SELECT e FROM Esami e WHERE idEsame = " + idEsame);
+		return (List<RisultatoEsame>)query.getResultList();
+		
 	}
 
 }
