@@ -1,5 +1,8 @@
 package it.uniroma3.db.models;
 
-public class Clinica {
+import java.util.Date;
 
+import it.uniroma3.db.dao.jpa.PazienteDaoJpa;
+
+public class Clinica {
 }

@@ -16,22 +16,12 @@ public class RisultatoEsame {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@ManyToOne
-	private Long idEsame;
-	
-	
 	private String descrizione;
 	
 	@Column
 	private String risultato;
 
-	public Long getIdEsame() {
-		return idEsame;
-	}
 
-	public void setIdEsame(Long idEsame) {
-		this.idEsame = idEsame;
-	}
 
 	public String getDescrizione() {
 		return descrizione;

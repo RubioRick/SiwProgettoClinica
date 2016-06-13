@@ -19,7 +19,7 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
 	@Override
 	public RisultatoEsame save(Long id,String descrizione, String risultato) {
 		RisultatoEsame r = new RisultatoEsame();
-		r.setIdEsame(id);r.setDescrizione(descrizione);r.setRisultato(risultato);
+		r.setId(id);r.setDescrizione(descrizione);r.setRisultato(risultato);
 		this.em.persist(r);
 		return r;
 	}
