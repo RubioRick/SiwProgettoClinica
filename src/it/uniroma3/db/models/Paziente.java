@@ -22,6 +22,9 @@ public class Paziente {
 	private String nome;
 	
 	@Column(nullable = false)
+	private String password;
+	
+	@Column(nullable = false)
 	private String cognome;
 	
 	@Temporal(TemporalType.DATE)
@@ -85,6 +88,14 @@ public class Paziente {
 	}
 	public void setEsami(List<Esame> esami) {
 		this.esami = esami;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

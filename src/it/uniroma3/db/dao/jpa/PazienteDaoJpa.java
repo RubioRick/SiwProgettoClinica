@@ -15,9 +15,9 @@ public class PazienteDaoJpa implements PazienteDao {
     private EntityManager em;
 
 	@Override
-	public Paziente save(String nome, String Cognome, String cf, String email, Date dataNascita) {
+	public Paziente save(String nome, String Cognome, String password, String cf, String email, Date dataNascita) {
 		Paziente p = new Paziente();
-		p.setCodiceFiscale(cf);p.setCognome(Cognome);p.setDataDiNascita(dataNascita);p.setEmail(email);p.setNome(nome);
+		p.setCodiceFiscale(cf);p.setCognome(Cognome);p.setDataDiNascita(dataNascita);p.setEmail(email);p.setNome(nome);p.setPassword(password);
 		this.em.persist(p);
 		return p;
 	}
