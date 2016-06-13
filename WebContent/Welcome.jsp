@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"
+	import="it.uniroma3.controller.*"
+	%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -51,13 +53,16 @@
 					<f:view>
 						<h1>Tipologie esame:</h1>
 						<h:form>
-							<c:forEach var="tipologiaEsame" items="#{TipologiaEsameController.tipologieEsame}">
+							<% 
+							TipologiaEsameController t = new TipologiaEsameController();
+							application.setAttribute("tipologieEsame", t.trovaTutteLeTipologieEsame()); 
+							%>
+							<c:forEach var="tipologiaEsame" items="${tipologieEsame}">
 									
 									    
-									<a href="mostraTipologiaEsame.jsp?id=<h:commandLink>
-												action='#{TipologiaEsameController.findTipologie}'
-												value= '#{tipologiaEsame.id}'>
-												</h:commandLink>" > ${tipologiaEsame.nome} </a>
+									<a href="mostraTipologiaEsame.jsp?id=${tipologiaEsame.id}">
+									${tipologiaEsame.nome}
+									</a>
 										
 									
 								</c:forEach>
