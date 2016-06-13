@@ -17,8 +17,10 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
     private EntityManager em;
 
 	@Override
-	public void save(TipologiaEsame t) {
+	public TipologiaEsame save(long id, String nome) {
+		TipologiaEsame t = new TipologiaEsame(id, nome);
 		this.em.persist(t);
+		return t;
 	}
 
 	@Override

@@ -22,8 +22,7 @@ public class TipologiaEsameController {
 	private TipologiaEsameDaoJpa tipologiaEsameFacade;
 	
 	public String creaTipologiaEsame(){
-		this.tipologiaEsame = new TipologiaEsame(id, nome);
-		tipologiaEsameFacade.save(tipologiaEsame);
+		tipologiaEsameFacade.save(id, nome);
 		return "tipologiaEsame";
 	}
 	

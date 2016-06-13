@@ -26,8 +26,7 @@ public class MedicoController {
 	private MedicoDaoJpa medicoFacade;
 	
 	public String creaMedico(){
-		this.medico = new Medico(id, password, nome, cognome, dataDiNascita);
-		medicoFacade.save(medico);
+		medicoFacade.save(id, password, nome, cognome, dataDiNascita);
 		return "medico";
 	}
 	

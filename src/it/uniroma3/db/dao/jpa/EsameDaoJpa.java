@@ -9,13 +9,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 
-import javafx.scene.chart.PieChart.Data;
 import it.uniroma3.db.dao.EsameDao;
-import it.uniroma3.db.dao.RisultatiEsameDao;
 import it.uniroma3.db.models.Esame;
 import it.uniroma3.db.models.Medico;
 import it.uniroma3.db.models.Paziente;
-import it.uniroma3.db.models.RisultatoEsame;
 import it.uniroma3.db.models.TipologiaEsame;
 
 @Stateless(name = "esameFacade")

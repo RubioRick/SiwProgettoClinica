@@ -9,7 +9,6 @@ import javax.persistence.Query;
 
 import it.uniroma3.db.dao.RisultatiEsameDao;
 import it.uniroma3.db.models.RisultatoEsame;
-import it.uniroma3.db.products.Product;
 
 @Stateless(name = "risFacade")
 public class RisultatiEsameDaoJpa implements RisultatiEsameDao {

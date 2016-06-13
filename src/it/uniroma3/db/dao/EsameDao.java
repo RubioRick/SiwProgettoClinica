@@ -4,7 +4,6 @@ package it.uniroma3.db.dao;
 import java.util.Date;
 import java.util.List;
 
-import javafx.scene.chart.PieChart.Data;
 import it.uniroma3.db.models.Esame;
 import it.uniroma3.db.models.Medico;
 import it.uniroma3.db.models.Paziente;
