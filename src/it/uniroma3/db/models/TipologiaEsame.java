@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 public class TipologiaEsame {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -32,12 +32,18 @@ public class TipologiaEsame {
 	public TipologiaEsame(){
 		this.esamiAssociati = new ArrayList<Esame>();
 	}
+	
+	public TipologiaEsame(long id, String nome){
+		this.id = id;
+		this.nome = nome;
+		this.esamiAssociati = new ArrayList<Esame>();
+	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

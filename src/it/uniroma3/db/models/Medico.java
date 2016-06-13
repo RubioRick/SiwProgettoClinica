@@ -39,6 +39,15 @@ public class Medico {
 	public Medico(){
 		this.esamiEffettuati = new ArrayList<Esame>();
 	}
+	
+	public Medico(long id, String password, String nome, String cognome, Date dataDiNascita){
+		this.id = id;
+		this.password = PortaleClinica.toSHA1(password);
+		this.nome = nome;
+		this.cognome = cognome;
+		this.dataDiNascita = dataDiNascita;
+		this.esamiEffettuati = new ArrayList<Esame>();
+	}
 
 	public Long getId() {
 		return id;
