@@ -11,11 +11,11 @@
 <h:form>
 <table>
 	<tr>
-		<th>Name</th>
+		<th>Nome Esami Prenotati</th>
 	</tr>
 	<c:forEach var="esame" items="#{esameController.esami}">
 		<tr><td>
-		<h:commandLink action="#{esameController.getEsamiPerPaziente(Paziente p)}" value="#{esame.name}">
+		<h:commandLink action="#{esameController.esamiPerPaziente(Paziente p)}" value="#{esame.nome}">
 			<f:param name="id" value="#{esame.id}" />
 		</h:commandLink>
 		

@@ -35,7 +35,7 @@ public class EsameController {
 		return "esami";
 	}
 	
-	public String EsamiPerPaziente(Paziente p){
+	public String esamiPerPaziente(Paziente p){
 		this.esami = esameFacade.getEsamiPerPaziente(p);
 		return "esami";
 	}
