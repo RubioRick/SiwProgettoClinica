@@ -22,6 +22,9 @@ public class TipologiaEsame {
 	@Column(nullable = false)
 	private String nome;
 	
+	@Column(nullable = false)
+	private String descrizione;
+	
 	@OneToMany(mappedBy = "tipologiaEsame")
 	private List<Esame> esamiAssociati;
 	
@@ -61,6 +64,22 @@ public class TipologiaEsame {
 
 	public void setEsamiAssociati(List<Esame> esamiAssociati) {
 		this.esamiAssociati = esamiAssociati;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public List<Requisito> getRequisiti() {
+		return requisiti;
+	}
+
+	public void setRequisiti(List<Requisito> requisiti) {
+		this.requisiti = requisiti;
 	}
 	
 }

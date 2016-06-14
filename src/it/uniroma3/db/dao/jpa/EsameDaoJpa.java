@@ -22,10 +22,10 @@ public class EsameDaoJpa implements EsameDao {
     private EntityManager em;
 
 	@Override
-	public Esame save(Long id, TipologiaEsame tipologiaEsame, Medico medico,
+	public Esame save( TipologiaEsame tipologiaEsame, Medico medico,
 			Paziente paziente, Date data) {
 		Esame e = new Esame();
-		e.setData(data);e.setId(id);e.setMedicoResponsabile(medico);e.setPaziente(paziente);e.setTipologiaEsame(tipologiaEsame);
+		e.setData(data);e.setMedicoResponsabile(medico);e.setPaziente(paziente);e.setTipologiaEsame(tipologiaEsame);
 		this.em.persist(e);
 		return e;
 	}
