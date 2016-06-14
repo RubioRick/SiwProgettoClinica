@@ -15,7 +15,7 @@
 		<properties>
 			<property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
 			<property name="openjpa.ConnectionUserName" value="postgres" />
-			<property name="openjpa.ConnectionPassword" value="7382" />
+			<property name="openjpa.ConnectionPassword" value="xxx" />
 			<property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/clinica" /> <!-- clinica è l'alias del db utilizzato -->
 			<property name="openjpa.jdbc.DBDictionary" value="postgres" />
 			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,SchemaAction=deleteTableContents,ForeignKeys=true)" /> <!-- SchemaAction=deleteTableContents serve solo al testing -->
