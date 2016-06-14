@@ -19,3 +19,4 @@ Desktop.ini
 .svn
 /resources/
 log4j.properties
+WebContent/META-INF/persistence.xml
