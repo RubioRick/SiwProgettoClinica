@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Inserisci id medico</title>
+<title>Inserimento Risultati esame</title>
 <style>
 html, #page {
 	padding: 0;
@@ -247,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 		</header>
 		<div class="feature">
 			<div class="feature-inner">
-				<h1>Visualizza gli esami di un medico</h1>
+				<h1>Inserimento risultati esame</h1>
 			</div>
 		</div>
 		<div id="content">
@@ -260,31 +261,55 @@ h1, h2, h3, h4, h5, h6 {
 					</h2>
 
 
-				<form class="form-horizontal">
-<fieldset>
+					<form class="form-horizontal">
+						<fieldset>
 
-<!-- Form Name -->
-<legend>visualizza esami medico</legend>
+							<!-- Form Name -->
+							<legend>inserisci risultati esame</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="idMedico">ID Medico</label>  
-  <div class="col-md-4">
-  <input id="idMedico" name="idMedico" type="text" placeholder="id" class="form-control input-md">
-  <span class="help-block">help</span>  
-  </div>
-</div>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="idEsameRiferimento">ID
+									esame di riferimento</label>
+								<div class="col-md-4">
+									<input id="idEsameRiferimento" name="idEsameRiferimento"
+										type="text" placeholder="ID" class="form-control input-md">
+									<span class="help-block">help</span>
+								</div>
+							</div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="conferma">Conferma</label>
-  <div class="col-md-4">
-    <button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
-  </div>
-</div>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="descrizione">Descrizione</label>
+								<div class="col-md-4">
+									<input id="descrizione" name="descrizione" type="text"
+										placeholder="descrizione" class="form-control input-md">
+									<span class="help-block">help</span>
+								</div>
+							</div>
 
-</fieldset>
-</form>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="valore">Valore</label>
+								<div class="col-md-4">
+									<input id="valore" name="valore" type="text"
+										placeholder="valore" class="form-control input-md"> <span
+										class="help-block">help</span>
+								</div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="invia">Conferma</label>
+								<div class="col-md-4">
+									<button id="invia" name="invia" class="btn btn-primary">Invia</button>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+
 
 					</p>
 
