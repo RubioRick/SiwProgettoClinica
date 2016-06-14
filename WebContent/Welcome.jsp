@@ -87,10 +87,15 @@
 						<ul>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">Contatti</a></li>
-							<li><a href="">Inserisci Prenotazione Esame</a></li>
-							<li><a href="">Inserisci Tipologia Esame</a></li>
-							<li><a href="">Inserisci Risultati Esame</a></li>
-							<li><a href="">Mostra Medico</a></li>
+							<%
+							if(amministratore != null)
+								out.print(
+									"<li><a href='faces/inserimentoEsame.jsp'>Inserisci Prenotazione Esame</a></li>" +
+									"<li><a href='faces/inserimentoTipologiaEsame.jsp'>Inserisci Tipologia Esame</a></li>" +
+									"<li><a href='faces/inserimentoRisultatiEsame.jsp'>Inserisci Risultati Esame</a></li>" +
+									"<li><a href='faces/visualizzaEsamiMedico.jsp'>Mostra Medico</a></li>"
+								);
+							%>
 						</ul>
 					</div>
 				</nav>
