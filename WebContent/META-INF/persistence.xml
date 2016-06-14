@@ -3,23 +3,21 @@
 	xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-						http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="siwclinica" transaction-type="RESOURCE_LOCAL"> <!-- siwclinica è il nome della persistence unit utilizzata -->
-		<class>it.uniroma3.db.models.Amministratore.java</class>
-		<class>it.uniroma3.db.models.Esame.java</class>
-		<class>it.uniroma3.db.models.Medico.java</class>
-		<class>it.uniroma3.db.models.Paziente.java</class>
-		<class>it.uniroma3.db.models.Requisito.java</class>
-		<class>it.uniroma3.db.models.RisultatoEsame.java</class>
-		<class>it.uniroma3.db.models.TipologiaEsame.java</class>
+			http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="clinica"
+		transaction-type="JTA">
+		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+		<jta-data-source>PostgreSQL Database</jta-data-source>
+		<class>it.uniroma3.db.model.Esame</class>
+		<class>it.uniroma3.db.model.Medico</class>
+		<class>it.uniroma3.db.model.Paziente</class>
+		<class>it.uniroma3.db.model.TipologiaEsame</class>
+		<class>it.uniroma3.db.model.RisultatoEsame</class>
+		<class>it.uniroma3.db.model.Requisito</class>
+		<class>it.uniroma3.db.model.Amministratore</class>
 		<properties>
-			<property name="openjpa.ConnectionDriverName" value="org.postgresql.Driver" />
-			<property name="openjpa.ConnectionUserName" value="postgres" />
-			<property name="openjpa.ConnectionPassword" value="7382" />
-			<property name="openjpa.ConnectionURL" value="jdbc:postgresql://localhost:5432/clinica" /> <!-- clinica è l'alias del db utilizzato -->
-			<property name="openjpa.jdbc.DBDictionary" value="postgres" />
-			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(SchemaAction=add,SchemaAction=deleteTableContents,ForeignKeys=true)" /> <!-- SchemaAction=deleteTableContents serve solo al testing -->
-			<property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />
+			<property name="openjpa.jdbc.SynchronizeMappings"
+			    value="buildSchema(ForeignKeys=true)" />
 		</properties>
 	</persistence-unit>
 </persistence>
