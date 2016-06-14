@@ -15,6 +15,7 @@ public class TipologiaEsameController {
 	@ManagedProperty(value="#{param.id}")
 	private long id;
 	private String nome;
+	private String descrizione;
 	private TipologiaEsame tipologiaEsame;
 	private List<TipologiaEsame> tipologieEsame;
 	
@@ -22,7 +23,7 @@ public class TipologiaEsameController {
 	private TipologiaEsameDaoJpa tipologiaEsameFacade;
 	
 	public String creaTipologiaEsame(){
-		tipologiaEsameFacade.save(id, nome);
+		tipologiaEsameFacade.save(nome,descrizione);
 		return "tipologiaEsame";
 	}
 	
@@ -79,6 +80,14 @@ public class TipologiaEsameController {
 
 	public void setTipologiaEsameFacade(TipologiaEsameDaoJpa TipologiaEsameFacade) {
 		this.tipologiaEsameFacade = TipologiaEsameFacade;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
 	}
 	
 }
