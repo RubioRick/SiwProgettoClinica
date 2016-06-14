@@ -13,7 +13,7 @@ public class AmministratoreDaoJpa implements AmministratoreDao {
     private EntityManager em;
 
 	@Override
-	public Amministratore save(String id , String nome , String password) {
+	public Amministratore save(Long id , String nome , String password) {
 		Amministratore a = new Amministratore();
 		this.em.persist(a);
 		return a;
@@ -30,7 +30,7 @@ public class AmministratoreDaoJpa implements AmministratoreDao {
 	}
 
 	@Override
-	public Amministratore findByPrimaryKey(String id) {
+	public Amministratore findByPrimaryKey(Long id) {
 		Amministratore a = this.em.find(Amministratore.class, id);
 		return a;
 	}
