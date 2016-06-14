@@ -68,6 +68,7 @@ public class Paziente {
 		this.email = email;
 	}
 	
+	@Override
 	public String toString() {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("Paziente"); 

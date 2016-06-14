@@ -10,7 +10,6 @@ import it.uniroma3.db.models.TipologiaEsame;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 
 @ManagedBean
 public class EsameController {

@@ -44,7 +44,7 @@ public class RisultatiEsameDaoJpa implements RisultatiEsameDao {
 	@Override
 	public List<RisultatoEsame> risultatiDi(Long idEsame) {
 		Query query = em.createQuery("SELECT e FROM Esami e WHERE idEsame = " + idEsame);
-		return (List<RisultatoEsame>)query.getResultList();
+		return query.getResultList();
 		
 	}
 

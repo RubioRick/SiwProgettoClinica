@@ -7,9 +7,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
-import it.uniroma3.db.dao.jpa.AmministratoreDaoJpa;
 import it.uniroma3.db.dao.jpa.RequisitoDaoJpa;
-import it.uniroma3.db.models.Amministratore;
 import it.uniroma3.db.models.Requisito;
 
 

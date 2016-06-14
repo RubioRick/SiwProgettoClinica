@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"
-	import="it.uniroma3.db.dao.jpa.TipologiaEsameDaoJpa"
-	%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -47,30 +47,24 @@
 						<span></span>
 					</h2>
 					<p>
-						<b>Benvenuto nel portale della clinica GSC.</b>
+						<b>Benvenuto nel portale della clinica GSG.</b>
 					</p>
 					<p>La clinica offre le seguenti tipologie di esame:</p>
+					<h1>Tipologie</h1>
 					<f:view>
-						<h1>Tipologie esame:</h1>
 						<h:form>
-							<% 
-							TipologiaEsameDaoJpa t = new TipologiaEsameDaoJpa();
-							application.setAttribute("tipologieEsame", t.findAll()); 
-							%>
-							<c:forEach var="tipologiaEsame" items="${tipologieEsame}">
-									
-									    
-									<a href="mostraTipologiaEsame.jsp?id=${tipologiaEsame.id}">
-									${tipologiaEsame.nome}
-									</a>
-										
-									
-								</c:forEach>
-							
+							<h3>Nome</h3>
+							<c:forEach var="tipologia" items="#{tipologiaEsameController.tipologieEsame}">
+								<p>
+									<h:commandLink
+										action="#{tipologiaEsameController.trovaTipologiaEsame}"
+										value="#{tipologia.nome}">
+										<f:param name="id" value="#{tipologia.id} " />
+									</h:commandLink>
+								</p>
+							</c:forEach>
 						</h:form>
-
 					</f:view>
-					<p></p>
 				</div>
 				</main>
 				<nav id="sidebar">
@@ -92,8 +86,8 @@
 					<h2>
 						<span>Crediti</span>
 					</h2>
-					<p>Questo sito è stato sviluppato da Riccardo Grasselli,
-						Federico Giulianelli, Simone Sanò.</p>
+					<p>Questo sito Ã¨ stato sviluppato da Riccardo Grasselli,
+						Federico Giulianelli, Simone SanÃ².</p>
 				</div>
 				<div class="clr"></div>
 			</div>

@@ -3,8 +3,6 @@ package it.uniroma3.db.dao.jpa;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import it.uniroma3.db.dao.AmministratoreDao;
 import it.uniroma3.db.models.Amministratore;
 

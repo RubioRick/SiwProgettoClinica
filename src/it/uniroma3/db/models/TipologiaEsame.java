@@ -63,10 +63,4 @@ public class TipologiaEsame {
 		this.esamiAssociati = esamiAssociati;
 	}
 	
-	
-	
-	
-	
-	
-
 }
