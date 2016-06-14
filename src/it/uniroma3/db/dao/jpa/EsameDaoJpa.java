@@ -7,6 +7,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 import it.uniroma3.db.dao.EsameDao;
@@ -54,6 +55,14 @@ public class EsameDaoJpa implements EsameDao {
         esami.select(esami.from(Esame.class));
         List<Esame> list = em.createQuery(esami).getResultList();
 		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Esame> getEsamiPerPaziente(Paziente p) {
+		Query query = em.createQuery("SELECT e FROM Esame e WHERE e.paziente = " + p.getCodiceFiscale());
+		return query.getResultList();
+		
 	}
 
 }

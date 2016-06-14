@@ -15,5 +15,6 @@ public interface EsameDao {
 	public void update(Esame e);
 	public Esame findByPromaryKey(Long id);
 	public List<Esame> findAll();
+	public List<Esame> getEsamiPerPaziente(Paziente p);
 
 }
