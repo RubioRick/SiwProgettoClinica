@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Login</title>
+<title>Inserimento tipologia esame</title>
 <style>
 html, #page {
 	padding: 0;
@@ -233,7 +233,13 @@ h1, h2, h3, h4, h5, h6 {
 				</div>
 				<div id="top-nav">
 					<ul>
-						<li><a href="#">Login</a></li>
+								<%
+								if (session.getAttribute("user") == null) {
+									out.print("<a href='Login.jsp'>Login</a>");
+								} else {
+									out.print(session.getAttribute("user"));
+								}
+							%>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -241,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
 		</header>
 		<div class="feature">
 			<div class="feature-inner">
-				<h1>Accedi al Portale:</h1>
+				<h1>Inserimento tipologia esame</h1>
 			</div>
 		</div>
 		<div id="content">
@@ -254,45 +260,45 @@ h1, h2, h3, h4, h5, h6 {
 					</h2>
 
 
-					<p>
-					<f:view>
-					<h:form>
+					<p><form class="form-horizontal">
 						<fieldset>
 
-							<!-- Form Name -->
-							<legend>
-								<i>Login</i>
-							</legend>
+<!-- Form Name -->
+<legend>Inserimento tipologia esame</legend>
 
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label"><b>Inserisci
-										Codice Fiscale:</b></label>
-								<div class="col-md-4">
-									 <h:inputText value="#{loginController.codiceFiscale}" />
-								</div>
-							</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nome">Nome tipologia esame</label>  
+  <div class="col-md-4">
+  <input id="nome" name="nome" type="text" placeholder="nome"
+										class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
 
-							<!-- Password input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label"><b>Inserisci
-										Password :</b></label>
-								<div class="col-md-4">
-									 <h:inputText value="#{loginController.password}" />
-								</div>
-							</div>
-							<p>
-								<!-- Button -->
-							<div class="form-group">
-								<div class="col-md-4">
-									<h:commandButton value="Submit"  action="#{loginController.loginPaziente}"/>
-								</div>
-							</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="descrizione">Descrizione</label>  
+  <div class="col-md-8">
+  <input id="descrizione" name="descrizione" type="text"
+										placeholder="descrizione" class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
 
-						</fieldset>
-					</h:form>
-					</f:view>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="conferma">Conferma</label>
+  <div class="col-md-4">
+    <button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
 					</p>
+					
 				</div>
 				</main>
 				<nav id="sidebar">

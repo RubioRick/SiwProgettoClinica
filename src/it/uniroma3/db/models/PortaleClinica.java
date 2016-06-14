@@ -10,7 +10,7 @@ import javax.ejb.Stateless;
 public class PortaleClinica {
 	
 	
-	protected static String toSHA1(String password) {
+	public static String toSHA1(String password) {
 		byte[] convertme = password.getBytes();
 	    MessageDigest md = null;
 	    try {

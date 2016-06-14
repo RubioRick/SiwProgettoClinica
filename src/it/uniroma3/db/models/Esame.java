@@ -32,7 +32,7 @@ public class Esame {
 	@Temporal(TemporalType.TIMESTAMP)
     private Date data;
 	
-	@OneToMany(mappedBy = "idEsame")
+	@OneToMany
 	private List<RisultatoEsame> risultati;
 
 	public Long getId() {

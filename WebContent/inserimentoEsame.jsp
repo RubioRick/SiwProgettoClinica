@@ -1,10 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Login</title>
+<title>Inserimento esame</title>
 <style>
 html, #page {
 	padding: 0;
@@ -233,7 +230,13 @@ h1, h2, h3, h4, h5, h6 {
 				</div>
 				<div id="top-nav">
 					<ul>
-						<li><a href="#">Login</a></li>
+						<%
+							if (session.getAttribute("user") == null) {
+								out.print("<a href='Login.jsp'>Login</a>");
+							} else {
+								out.print(session.getAttribute("user"));
+							}
+						%>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -241,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 		</header>
 		<div class="feature">
 			<div class="feature-inner">
-				<h1>Accedi al Portale:</h1>
+				<h1>Inserimento esame</h1>
 			</div>
 		</div>
 		<div id="content">
@@ -254,45 +257,59 @@ h1, h2, h3, h4, h5, h6 {
 					</h2>
 
 
-					<p>
-					<f:view>
-					<h:form>
+					<form class="form-horizontal">
 						<fieldset>
 
 							<!-- Form Name -->
-							<legend>
-								<i>Login</i>
-							</legend>
+							<legend>Inserimento esame</legend>
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label"><b>Inserisci
-										Codice Fiscale:</b></label>
+								<label class="col-md-4 control-label" for="codice fiscale">Codice
+									fiscale Paziente</label>
 								<div class="col-md-4">
-									 <h:inputText value="#{loginController.codiceFiscale}" />
+									<input id="codice fiscale" name="codice fiscale" type="text"
+										placeholder="codice fiscale" class="form-control input-md">
+									<span class="help-block">help</span>
 								</div>
 							</div>
 
-							<!-- Password input-->
+							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label"><b>Inserisci
-										Password :</b></label>
+								<label class="col-md-4 control-label" for="medico">ID
+									medico</label>
 								<div class="col-md-4">
-									 <h:inputText value="#{loginController.password}" />
+									<input id="medico" name="medico" type="text" placeholder="ID"
+										class="form-control input-md"> <span
+										class="help-block">help</span>
 								</div>
 							</div>
-							<p>
-								<!-- Button -->
+
+							<!-- Text input-->
 							<div class="form-group">
+								<label class="col-md-4 control-label" for="tipologiaEsame">ID
+									Tipologia esame</label>
 								<div class="col-md-4">
-									<h:commandButton value="Submit"  action="#{loginController.loginPaziente}"/>
+									<input id="tipologiaEsame" name="tipologiaEsame" type="text"
+										placeholder="ID tipologia" class="form-control input-md">
+									<span class="help-block">help</span>
+								</div>
+							</div>
+
+							<!-- Button -->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="conferma">Conferma</label>
+								<div class="col-md-4">
+									<button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
 								</div>
 							</div>
 
 						</fieldset>
-					</h:form>
-					</f:view>
+					</form>
+
+
 					</p>
+
 				</div>
 				</main>
 				<nav id="sidebar">
@@ -313,8 +330,8 @@ h1, h2, h3, h4, h5, h6 {
 					<h2>
 						<span>Crediti</span>
 					</h2>
-					<p>Questo sito Ã¨ stato sviluppato da Riccardo Grasselli ,
-						Federico Giulianelli , Simone SanÃ².</p>
+					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
+						Federico Giulianelli , Simone Sanò.</p>
 				</div>
 				<div class="clr"></div>
 			</div>

@@ -1,6 +1,7 @@
 package it.uniroma3.db.dao.jpa;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,9 +15,9 @@ public class PazienteDaoJpa implements PazienteDao {
     private EntityManager em;
 
 	@Override
-	public Paziente save(String nome, String Cognome, String cf, String email, Date dataNascita) {
+	public Paziente save(String nome, String Cognome, String password, String cf, String email, Date dataNascita) {
 		Paziente p = new Paziente();
-		p.setCodiceFiscale(cf);p.setCognome(Cognome);p.setDataDiNascita(dataNascita);p.setEmail(email);p.setNome(nome);
+		p.setCodiceFiscale(cf);p.setCognome(Cognome);p.setDataDiNascita(dataNascita);p.setEmail(email);p.setNome(nome);p.setPassword(password);
 		this.em.persist(p);
 		return p;
 	}
@@ -35,6 +36,12 @@ public class PazienteDaoJpa implements PazienteDao {
 	public Paziente findByPrimaryKey(String cf) {
 		Paziente p = this.em.find(Paziente.class, cf);
 		return p;
+	}
+
+	@Override
+	public List<Paziente> findAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

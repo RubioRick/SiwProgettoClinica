@@ -17,8 +17,9 @@ public class TipologiaEsameDaoJpa implements TipologiaEsameDao {
 	private EntityManager em;
 
 	@Override
-	public TipologiaEsame save(long id, String nome) {
-		TipologiaEsame t = new TipologiaEsame(id, nome);
+	public TipologiaEsame save( String nome,String descrizione) {
+		TipologiaEsame t = new TipologiaEsame();
+		t.setNome(nome);t.setDescrizione(descrizione);
 		this.em.persist(t);
 		return t;
 	}
