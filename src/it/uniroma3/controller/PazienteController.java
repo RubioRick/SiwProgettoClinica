@@ -16,6 +16,7 @@ public class PazienteController {
 	@ManagedProperty(value="#{param.id}")
 	private String codiceFiscale;
 	private String nome;
+	private String password;
 	private String cognome;
 	private String email;
 	private Date dataNascita;
@@ -26,7 +27,7 @@ public class PazienteController {
 	private PazienteDaoJpa pazienteFacade;
 	
 	public String creaPaziente(){
-		this.paziente = pazienteFacade.save(nome, cognome, codiceFiscale, email, dataNascita);
+		this.paziente = pazienteFacade.save(nome, cognome,password, codiceFiscale, email, dataNascita);
 		return "paziente";
 	}
 	
