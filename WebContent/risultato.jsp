@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-	pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Inserimento Risultati esame</title>
+<title>Inserimento tipologia esame</title>
 <style>
 html, #page {
 	padding: 0;
@@ -234,13 +233,13 @@ h1, h2, h3, h4, h5, h6 {
 				</div>
 				<div id="top-nav">
 					<ul>
-						<%
-							if (session.getAttribute("user") == null) {
-								out.print("<a href='Login.jsp'>Login</a>");
-							} else {
-								out.print(session.getAttribute("user"));
-							}
-						%>
+								<%
+								if (session.getAttribute("user") == null) {
+									out.print("<a href='Login.jsp'>Login</a>");
+								} else {
+									out.print(session.getAttribute("user"));
+								}
+							%>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -248,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
 		</header>
 		<div class="feature">
 			<div class="feature-inner">
-				<h1>Inserimento risultati esame</h1>
+				<h1>risultati esame</h1>
 			</div>
 		</div>
 		<div id="content">
@@ -260,62 +259,14 @@ h1, h2, h3, h4, h5, h6 {
 						<span></span>
 					</h2>
 
-
-					<form class="form-horizontal">
-						<fieldset>
-
-							<!-- Form Name -->
-							<legend>inserisci risultati esame</legend>
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="idEsameRiferimento">ID
-									esame di riferimento</label>
-								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.idEsame}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" />
-									<span class="help-block">help</span>
-								</div>
-							</div>
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="descrizione">Descrizione</label>
-								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.descrizione}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" />
-									<span class="help-block">help</span>
-								</div>
-							</div>
-
-							<!-- Text input-->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="valore">Valore</label>
-								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.risEsame}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" /> <span
-										class="help-block">help</span>
-								</div>
-							</div>
-
-							<!-- Button -->
-							<div class="form-group">
-								<label class="col-md-4 control-label" for="invia">Conferma</label>
-								<div class="col-md-4">
-									<h:commandButton value="Submit"  action="#{risultatiEsameController.creaRisultato}"/>
-								</div>
-							</div>
-
-						</fieldset>
-					</form>
-
-
+<f:view>
+<h1>${risultatiEsameController.RisultatoEsame.descrizione}</h1>
+<h2>Dettagli</h2>
+<div>Descrizione: ${risultatiEsameController.RisultatoEsame.risultato}</div>
+</f:view>
 
 					</p>
-
+					
 				</div>
 				</main>
 				<nav id="sidebar">
