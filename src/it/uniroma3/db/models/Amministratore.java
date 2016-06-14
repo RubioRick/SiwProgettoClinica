@@ -14,7 +14,7 @@ public class Amministratore {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="tab1")
-	private String id;
+	private long id;
 
 	@Column
 	private String nome;
@@ -22,11 +22,11 @@ public class Amministratore {
 	@Column
 	private String password;
 
-	public String getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

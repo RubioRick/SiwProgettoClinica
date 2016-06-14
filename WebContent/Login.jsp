@@ -233,7 +233,15 @@ h1, h2, h3, h4, h5, h6 {
 				</div>
 				<div id="top-nav">
 					<ul>
-						<li><a href="#">Login</a></li>
+						<li>
+							<%
+								if (session.getAttribute("user") == null) {
+									out.print("<a href='Login.jsp'>Login</a>");
+								} else {
+									out.print(session.getAttribute("user"));
+								}
+							%>
+						</li>
 					</ul>
 				</div>
 				<div class="clr"></div>

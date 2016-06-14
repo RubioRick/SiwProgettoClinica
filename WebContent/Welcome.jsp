@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"
+	import="it.uniroma3.db.models.Paziente,
+			it.uniroma3.db.models.Amministratore,
+			it.uniroma3.db.models.Medico;" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
@@ -22,10 +25,21 @@
 					<ul>
 						<li>
 							<%
-								if (session.getAttribute("user") == null) {
+								Paziente paziente = (Paziente)request.getAttribute("paziente");
+								Medico medico = (Medico)request.getAttribute("medico");
+								Amministratore amministratore = (Amministratore)request.getAttribute("ammistratore");
+								
+								if (paziente != null) {
+									out.print(paziente.getNome());
+								} 
+								else if(amministratore != null){
+									out.print(amministratore.getNome() + " (Admin)");
+								} 
+								else if(medico != null){
+									out.print(medico.getNome() + " (Medico)");
+								}
+								else {
 									out.print("<a href='Login.jsp'>Login</a>");
-								} else {
-									out.print(session.getAttribute("user"));
 								}
 							%>
 						</li>
@@ -73,6 +87,10 @@
 						<ul>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">Contatti</a></li>
+							<li><a href="">Inserisci Prenotazione Esame</a></li>
+							<li><a href="">Inserisci Tipologia Esame</a></li>
+							<li><a href="">Inserisci Risultati Esame</a></li>
+							<li><a href="">Mostra Medico</a></li>
 						</ul>
 					</div>
 				</nav>
