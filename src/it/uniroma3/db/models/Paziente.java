@@ -95,7 +95,7 @@ public class Paziente {
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.password = PortaleClinica.toSHA1(password);
 	}
 
 }

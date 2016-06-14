@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -252,7 +255,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 					<p>
-					<form class="form-horizontal">
+					<f:view>
+					<h:form>
 						<fieldset>
 
 							<!-- Form Name -->
@@ -262,38 +266,32 @@ h1, h2, h3, h4, h5, h6 {
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="textinput"><b>Inserisci
-										Codice :</b></label>
+								<label class="col-md-4 control-label"><b>Inserisci
+										Codice Fiscale:</b></label>
 								<div class="col-md-4">
-									<input id="textinput" name="textinput" type="text"
-										placeholder="Codice" class="form-control input-md" required="">
-
+									 <h:inputText value="#{loginController.codiceFiscale}" />
 								</div>
 							</div>
 
 							<!-- Password input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="passwordinput"><b>Inserisci
+								<label class="col-md-4 control-label"><b>Inserisci
 										Password :</b></label>
 								<div class="col-md-4">
-									<input id="passwordinput" name="passwordinput" type="password"
-										placeholder="Password" class="form-control input-md"
-										required="">
-
+									 <h:inputText value="#{loginController.password}" />
 								</div>
 							</div>
 							<p>
 								<!-- Button -->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="singlebutton"></label>
 								<div class="col-md-4">
-									<button id="singlebutton" name="singlebutton"
-										class="btn btn-primary">Accedi</button>
+									<h:commandButton value="Submit"  action="#{loginController.loginPaziente}"/>
 								</div>
 							</div>
 
 						</fieldset>
-					</form>
+					</h:form>
+					</f:view>
 					</p>
 				</div>
 				</main>
@@ -315,8 +313,8 @@ h1, h2, h3, h4, h5, h6 {
 					<h2>
 						<span>Crediti</span>
 					</h2>
-					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
-						Federico Giulianelli , Simone Sanò.</p>
+					<p>Questo sito Ã¨ stato sviluppato da Riccardo Grasselli ,
+						Federico Giulianelli , Simone SanÃ².</p>
 				</div>
 				<div class="clr"></div>
 			</div>
