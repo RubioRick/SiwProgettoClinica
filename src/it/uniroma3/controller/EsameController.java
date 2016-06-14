@@ -35,6 +35,11 @@ public class EsameController {
 		return "esami";
 	}
 	
+	public String esamiPerPaziente(Paziente p){
+		this.esami = esameFacade.getEsamiPerPaziente(p);
+		return "esami";
+	}
+	
 	public String trovaEsame(Long id){
 		this.esame = esameFacade.findByPromaryKey(id);
 		return "esame";

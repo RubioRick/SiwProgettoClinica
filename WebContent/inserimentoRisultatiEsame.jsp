@@ -272,9 +272,8 @@ h1, h2, h3, h4, h5, h6 {
 								<label class="col-md-4 control-label" for="idEsameRiferimento">ID
 									esame di riferimento</label>
 								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.idEsame}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" />
+									<input id="idEsameRiferimento" name="idEsameRiferimento"
+										type="text" placeholder="ID" class="form-control input-md">
 									<span class="help-block">help</span>
 								</div>
 							</div>
@@ -283,9 +282,8 @@ h1, h2, h3, h4, h5, h6 {
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="descrizione">Descrizione</label>
 								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.descrizione}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" />
+									<input id="descrizione" name="descrizione" type="text"
+										placeholder="descrizione" class="form-control input-md">
 									<span class="help-block">help</span>
 								</div>
 							</div>
@@ -294,9 +292,8 @@ h1, h2, h3, h4, h5, h6 {
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="valore">Valore</label>
 								<div class="col-md-4">
-									<h:inputText value="#{risultatiEsameController.risEsame}"
-										required="true" requiredMessage="Code is mandatory" id="code" />
-									<h:message for="code" /> <span
+									<input id="valore" name="valore" type="text"
+										placeholder="valore" class="form-control input-md"> <span
 										class="help-block">help</span>
 								</div>
 							</div>
@@ -305,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="invia">Conferma</label>
 								<div class="col-md-4">
-									<h:commandButton value="Submit"  action="#{risultatiEsameController.creaRisultato}"/>
+									<button id="invia" name="invia" class="btn btn-primary">Invia</button>
 								</div>
 							</div>
 
