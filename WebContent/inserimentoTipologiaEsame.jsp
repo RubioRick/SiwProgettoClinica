@@ -270,8 +270,10 @@ h1, h2, h3, h4, h5, h6 {
 <div class="form-group">
   <label class="col-md-4 control-label" for="nome">Nome tipologia esame</label>  
   <div class="col-md-4">
-  <input id="nome" name="nome" type="text" placeholder="nome"
-										class="form-control input-md">
+   <h:inputText value="#{tipologiaEsameController.nome}" 
+                     required="true"
+                     requiredMessage="Code is mandatory"
+                     id="nome"/> <h:message for="nome" />
   <span class="help-block">help</span>  
   </div>
 </div>
@@ -280,8 +282,10 @@ h1, h2, h3, h4, h5, h6 {
 <div class="form-group">
   <label class="col-md-4 control-label" for="descrizione">Descrizione</label>  
   <div class="col-md-8">
-  <input id="descrizione" name="descrizione" type="text"
-										placeholder="descrizione" class="form-control input-md">
+ <h:inputText value="#{tipologiaEsameController.descrizione}" 
+                     required="true"
+                     requiredMessage="Code is mandatory"
+                     id="descrizione"/> <h:message for="descrizione" />
   <span class="help-block">help</span>  
   </div>
 </div>
@@ -290,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 <div class="form-group">
   <label class="col-md-4 control-label" for="conferma">Conferma</label>
   <div class="col-md-4">
-    <button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
+    <h:commandButton value="conferma"  action="#{tipologiaEsameController.creaTipologiaEsame}"/>
   </div>
 </div>
 
