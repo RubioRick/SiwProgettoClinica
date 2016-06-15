@@ -49,8 +49,6 @@ public class EsameController {
 		this.esame = esameFacade.findByPromaryKey(id);
 		return "esame";
 	}
-	
-	
 
 
 	public Long getId() {
@@ -116,8 +114,6 @@ public class EsameController {
 	public void setEsameFacade(EsameDaoJpa esameFacade) {
 		this.esameFacade = esameFacade;
 	}
-	
-	
 	
 	
 
