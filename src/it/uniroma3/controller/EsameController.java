@@ -26,7 +26,7 @@ public class EsameController {
 	private EsameDaoJpa esameFacade;
 	
 	public String CreaEsame(){
-		this.esame = esameFacade.save( tipologia, medico, paziente, data);
+		this.esame = esameFacade.save(tipologia, medico.getId(), paziente.getCodiceFiscale(), data);
 		return "esame";
 	}
 	

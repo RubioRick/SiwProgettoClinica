@@ -22,14 +22,8 @@ public class EsameDaoJpa implements EsameDao {
 	@PersistenceContext(unitName = "clinica")
     private EntityManager em;
 
-	@Override
-	public Esame save( TipologiaEsame tipologiaEsame, Medico medico,
-			Paziente paziente, Date data) {
-		Esame e = new Esame();
-		e.setData(data);e.setMedicoResponsabile(medico);e.setPaziente(paziente);e.setTipologiaEsame(tipologiaEsame);
-		this.em.persist(e);
-		return e;
-	}
+	
+
 
 	@Override
 	public void remove(Esame e) {
@@ -64,5 +58,20 @@ public class EsameDaoJpa implements EsameDao {
 		return query.getResultList();
 		
 	}
+
+	@Override
+	public Esame save(TipologiaEsame tipologia, Long id, String codiceFiscale,
+			Date data) {
+		Esame e = new Esame();
+		MedicoDaoJpa medicoFacade = new MedicoDaoJpa();
+		Medico m = medicoFacade.findByPrimaryKey(id);
+		PazienteDaoJpa pazienteFacade = new PazienteDaoJpa();
+		Paziente p = pazienteFacade.findByPrimaryKey(codiceFiscale);
+		e.setData(data); e.setTipologiaEsame(tipologia);e.setMedicoResponsabile(m); e.setPaziente(p);
+		this.em.persist(e);
+		return e;
+	}
+
+
 
 }
