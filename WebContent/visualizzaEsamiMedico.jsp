@@ -268,9 +268,19 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="idMedico">ID Medico</label>  
+  <label class="col-md-4 control-label" for="nomeMedico">Nome Medico</label>  
   <div class="col-md-4">
-  <input id="idMedico" name="idMedico" type="text" placeholder="id" class="form-control input-md">
+  <input id="nome" name="nome" type="text" placeholder="nome" class="form-control input-md">
+   <h:inputText value="#{AmministratoreController.medico.nome}" />
+  <span class="help-block">help</span>  
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="cognomeMedico">Cognome Medico</label>  
+  <div class="col-md-4">
+  <input id="cognome" name="cognome" type="text" placeholder="cognome" class="form-control input-md">
+   <h:inputText value="#{AmministratoreController.medico.cognome}" />
   <span class="help-block">help</span>  
   </div>
 </div>
@@ -280,6 +290,9 @@ h1, h2, h3, h4, h5, h6 {
   <label class="col-md-4 control-label" for="conferma">Conferma</label>
   <div class="col-md-4">
     <button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
+    <h:commandButton value="Submit"  action="#{amministrazioneController.getEsamiMedico}"/>
+    <f:param name="nome" value="#{amministrazioneController.medico.nome}" />
+    <f:param name="cognome" value="#{amministrazioneController.medico.cognome}" />
   </div>
 </div>
 
