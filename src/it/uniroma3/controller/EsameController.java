@@ -49,6 +49,11 @@ public class EsameController {
 		this.esame = esameFacade.findByPromaryKey(id);
 		return "esame";
 	}
+	
+	public String trovaEsamiPaziente(String cf) {
+		this.esami = esameFacade.trovaEsamiPaziente(cf);
+		return "esamiPaziente";
+	}
 
 
 	public Long getId() {

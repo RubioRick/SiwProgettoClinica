@@ -1,6 +1,7 @@
 package it.uniroma3.db.dao.jpa;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,23 +19,23 @@ import it.uniroma3.db.models.TipologiaEsame;
 
 @Stateless(name = "esameFacade")
 public class EsameDaoJpa implements EsameDao {
-	
-	@PersistenceContext(unitName = "clinica")
-    private EntityManager em;
 
-	
+	@PersistenceContext(unitName = "clinica")
+	private EntityManager em;
+
+
 
 
 	@Override
 	public void remove(Esame e) {
 		this.em.remove(e);
-		
+
 	}
 
 	@Override
 	public void update(Esame e) {
 		this.em.merge(e);
-		
+
 	}
 
 	@Override
@@ -46,8 +47,8 @@ public class EsameDaoJpa implements EsameDao {
 	@Override
 	public List<Esame> findAll() {
 		CriteriaQuery<Esame> esami = em.getCriteriaBuilder().createQuery(Esame.class);
-        esami.select(esami.from(Esame.class));
-        List<Esame> list = em.createQuery(esami).getResultList();
+		esami.select(esami.from(Esame.class));
+		List<Esame> list = em.createQuery(esami).getResultList();
 		return list;
 	}
 
@@ -56,7 +57,7 @@ public class EsameDaoJpa implements EsameDao {
 	public List<Esame> getEsamiPerPaziente(Paziente p) {
 		Query query = em.createQuery("SELECT e FROM Esame e WHERE e.paziente = " + p.getCodiceFiscale());
 		return query.getResultList();
-		
+
 	}
 
 	@Override
@@ -70,6 +71,19 @@ public class EsameDaoJpa implements EsameDao {
 		e.setData(data); e.setTipologiaEsame(tipologia);e.setMedicoResponsabile(m); e.setPaziente(p);
 		this.em.persist(e);
 		return e;
+	}
+
+	@Override
+	public List<Esame> trovaEsamiPaziente(String cf) {
+		CriteriaQuery<Esame> esami = em.getCriteriaBuilder().createQuery(Esame.class);
+		esami.select(esami.from(Esame.class));
+		List<Esame> list = em.createQuery(esami).getResultList();
+		List<Esame> esamiPaziente = new ArrayList<>();
+		for (Esame e : list) {
+			if (e.getPaziente().getCodiceFiscale().equals(cf))
+				esamiPaziente.add(e);
+		}
+		return esamiPaziente;
 	}
 
 
