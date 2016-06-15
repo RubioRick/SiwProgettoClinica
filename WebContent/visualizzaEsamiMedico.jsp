@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -260,69 +261,88 @@ h1, h2, h3, h4, h5, h6 {
 					</h2>
 
 
-				<form class="form-horizontal">
-<fieldset>
+					<form class="form-horizontal">
+						<fieldset>
 
-<!-- Form Name -->
-<legend>visualizza esami medico</legend>
+							<!-- Form Name -->
+							<legend>visualizza esami medico</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="idMedico">ID Medico</label>  
-  <div class="col-md-4">
-  <input id="idMedico" name="idMedico" type="text" placeholder="id" class="form-control input-md">
-  <span class="help-block">help</span>  
-  </div>
-</div>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="nomeMedico">Nome</label>
+								<div class="col-md-4">
+									<input id="nome" name="Nome Medico" type="text"
+										placeholder="Nome" class="form-control input-md">
+									<h:inputText value="#{amministrazioneController.medico.nome}" />
+									<span class="help-block">help</span>
+								</div>
+							</div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="conferma">Conferma</label>
-  <div class="col-md-4">
-    <button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
-  </div>
-</div>
+							<!-- Text input-->
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="cognomeMedico">Cognome</label>
+								<div class="col-md-4">
+									<input id="cognome" name="Cognome Medico" type="text"
+										placeholder="Cognome" class="form-control input-md">
+									<h:inputText value="#{amministrazioneController.medico.cognome}" />
+									<span class="help-block">help</span>
+								</div>
+							</div>
 
-</fieldset>
-</form>
 
-					</p>
 
+							<!-- Button -->
+							<div class="form-group">
+
+								<button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
+								<h:commandButton value="Submit"
+									action="#{amministratoreContorller.getEsamiMedico}" />
+									<f:param name="nome" value="#{amministratoreController.medico.nome}" />
+									<f:param name="cognome" value="#{amministratoreController.medico.cognome}" />
+								<button name=”Conferma” type=”submit”>Conferma Dati</button>
+					</form>
 				</div>
-				</main>
-				<nav id="sidebar">
-					<div class="widget">
-						<h3>Informazioni</h3>
-						<ul>
-							<li><a href="#">Help</a></li>
-							<li><a href="#">Contatti</a></li>
-						</ul>
-					</div>
-				</nav>
-				<div class="clr"></div>
 			</div>
+
+			</fieldset>
+			</form>
+
+			</p>
 		</div>
-		<div id="footerblurb">
-			<div id="footerblurb-inner">
-				<div class="text">
-					<h2>
-						<span>Crediti</span>
-					</h2>
-					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
-						Federico Giulianelli , Simone Sanò.</p>
-				</div>
-				<div class="clr"></div>
+		</main>
+		<nav id="sidebar">
+			<div class="widget">
+				<h3>Informazioni</h3>
+				<ul>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Contatti</a></li>
+				</ul>
 			</div>
+		</nav>
+		<div class="clr"></div>
+	</div>
+	</div>
+	<div id="footerblurb">
+		<div id="footerblurb-inner">
+			<div class="text">
+				<h2>
+					<span>Crediti</span>
+				</h2>
+				<p>Questo sito �� stato sviluppato da Riccardo Grasselli ,
+					Federico Giulianelli , Simone San��.</p>
+			</div>
+			<div class="clr"></div>
 		</div>
-		<footer id="footer">
-			<div id="footer-inner">
-				<p>
-					&copy; Copyright <a href="#">Your Site</a> &#124; <a href="#">Terms
-						of Use</a> &#124; <a href="#">Privacy Policy</a>
-				</p>
-				<div class="clr"></div>
-			</div>
-		</footer>
+	</div>
+	<footer id="footer">
+		<div id="footer-inner">
+			<p>
+				&copy; Copyright <a href="#">Your Site</a> &#124; <a href="#">Terms
+					of Use</a> &#124; <a href="#">Privacy Policy</a>
+			</p>
+			<div class="clr"></div>
+		</div>
+	</footer>
 	</div>
 </body>
 </html>

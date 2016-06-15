@@ -26,7 +26,7 @@ public class EsameController {
 	private EsameDaoJpa esameFacade;
 	
 	public String CreaEsame(){
-		this.esame = esameFacade.save( tipologia, medico, paziente, data);
+		this.esame = esameFacade.save(tipologia, medico.getId(), paziente.getCodiceFiscale(), data);
 		return "esame";
 	}
 	
@@ -49,6 +49,8 @@ public class EsameController {
 		this.esame = esameFacade.findByPromaryKey(id);
 		return "esame";
 	}
+	
+	
 
 
 	public Long getId() {
@@ -114,6 +116,8 @@ public class EsameController {
 	public void setEsameFacade(EsameDaoJpa esameFacade) {
 		this.esameFacade = esameFacade;
 	}
+	
+	
 	
 	
 
