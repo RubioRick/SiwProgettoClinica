@@ -25,7 +25,7 @@
 							<%
 								Paziente paziente = (Paziente)request.getAttribute("paziente");
 								Medico medico = (Medico)request.getAttribute("medico");
-								Amministratore amministratore = (Amministratore)request.getAttribute("ammistratore");
+								Amministratore amministratore = (Amministratore)request.getAttribute("amministratore");
 								
 								if (paziente != null) {
 									out.print(paziente.getNome());

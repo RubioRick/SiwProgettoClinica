@@ -254,7 +254,16 @@ h1, h2, h3, h4, h5, h6 {
 		</div>
 		<div id="content">
 			<div id="content-inner">
-
+				<nav id="sidebar">
+					<div class="widget">
+						<h3>Informazioni</h3>
+						<ul>
+							<li><a href="#">Help</a></li>
+							<li><a href="#">Contatti</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="clr"></div>
 				<main id="contentbar">
 				<div class="article">
 					<h2>
@@ -303,16 +312,6 @@ h1, h2, h3, h4, h5, h6 {
 					</p>
 				</div>
 				</main>
-				<nav id="sidebar">
-					<div class="widget">
-						<h3>Informazioni</h3>
-						<ul>
-							<li><a href="#">Help</a></li>
-							<li><a href="#">Contatti</a></li>
-						</ul>
-					</div>
-				</nav>
-				<div class="clr"></div>
 			</div>
 		</div>
 		<div id="footerblurb">
