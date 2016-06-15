@@ -42,7 +42,7 @@ public class EsameController {
 	
 	public String trovaEsame(Long id){
 		this.esame = esameFacade.findByPromaryKey(id);
-		return "esame";
+		return "faces/esame.jsp";
 	}
 	
 	public String trovaEsame(){

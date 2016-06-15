@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"
-	import="it.uniroma3.db.models.Paziente,
-			it.uniroma3.db.models.Amministratore,
-			it.uniroma3.db.models.Medico;" %>
+	pageEncoding="ISO-8859-1" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
+<%@ page import="it.uniroma3.db.models.*"  %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
