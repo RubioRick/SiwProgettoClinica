@@ -8,8 +8,6 @@ import javax.faces.bean.ManagedProperty;
 
 import it.uniroma3.db.dao.jpa.AmministratoreDaoJpa;
 import it.uniroma3.db.models.Amministratore;
-import it.uniroma3.db.models.Esame;
-import it.uniroma3.db.models.Medico;
 
 
 
@@ -22,8 +20,6 @@ public class AmministratoreController {
 	private String password;
 	private Amministratore amministratore;
 	private List<Amministratore> amministratori;
-	private List<Esame> esamiMedico;
-	private Medico medico;
 	
 	@EJB
 	private AmministratoreDaoJpa amministratoreFacade;
@@ -43,11 +39,6 @@ public class AmministratoreController {
 	public String findAmministratore(Long id) {
 		this.amministratore = amministratoreFacade.findByPrimaryKey(id);
 		return "amministartore";
-	}
-	
-	public String getEsamiMedico() {
-		this.esamiMedico = amministratoreFacade.trovaEsamiMedico(medico.getNome() , medico.getCognome());
-		return  "visualizzaEsamiMedico";
 	}
 
 	public Long getId() {
