@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+	pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -268,8 +272,9 @@ h1, h2, h3, h4, h5, h6 {
 								<label class="col-md-4 control-label" for="codice fiscale">Codice
 									fiscale Paziente</label>
 								<div class="col-md-4">
-									<input id="codice fiscale" name="codice fiscale" type="text"
-										placeholder="codice fiscale" class="form-control input-md">
+									<h:inputText value="#{esameController.paziente.codiceFiscale}" required="true"
+										requiredMessage="cf is mandatory" id="cf" />
+									<h:message for="name" />
 									<span class="help-block">help</span>
 								</div>
 							</div>
@@ -279,8 +284,9 @@ h1, h2, h3, h4, h5, h6 {
 								<label class="col-md-4 control-label" for="medico">ID
 									medico</label>
 								<div class="col-md-4">
-									<input id="medico" name="medico" type="text" placeholder="ID"
-										class="form-control input-md"> <span
+									<h:inputText value="#{esameController.medico.id}" required="true"
+										requiredMessage="id is mandatory" id="idMedico" />
+									<h:message for="name" /> <span
 										class="help-block">help</span>
 								</div>
 							</div>
@@ -290,8 +296,9 @@ h1, h2, h3, h4, h5, h6 {
 								<label class="col-md-4 control-label" for="tipologiaEsame">ID
 									Tipologia esame</label>
 								<div class="col-md-4">
-									<input id="tipologiaEsame" name="tipologiaEsame" type="text"
-										placeholder="ID tipologia" class="form-control input-md">
+									<h:inputText value="#{esameController.tipologia}" required="true"
+										requiredMessage="cf is mandatory" id="cf" />
+									<h:message for="name" />
 									<span class="help-block">help</span>
 								</div>
 							</div>
@@ -300,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="conferma">Conferma</label>
 								<div class="col-md-4">
-									<button id="conferma" name="conferma" class="btn btn-primary">Invia</button>
+									<h:commandButton value="Submit"  action="#{esameController.CreaEsame}"/>
 								</div>
 							</div>
 
@@ -330,8 +337,8 @@ h1, h2, h3, h4, h5, h6 {
 					<h2>
 						<span>Crediti</span>
 					</h2>
-					<p>Questo sito è stato sviluppato da Riccardo Grasselli ,
-						Federico Giulianelli , Simone Sanò.</p>
+					<p>Questo sito Ã¨ stato sviluppato da Riccardo Grasselli ,
+						Federico Giulianelli , Simone SanÃ².</p>
 				</div>
 				<div class="clr"></div>
 			</div>
